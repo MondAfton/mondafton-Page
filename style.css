@@ -1,0 +1,245 @@
+/* 基礎設定 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", sans-serif;
+    background: linear-gradient(135deg, #fdf2f8 0%, #fae8ff 100%);
+    min-height: 100vh;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+/* 電腦版雙欄外框 */
+.layout-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+}
+
+/* 左側個人名片欄 */
+.sidebar {
+    width: 300px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 40px;
+}
+
+.profile-card {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    padding: 32px 24px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(217, 70, 239, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    text-align: center;
+}
+
+.avatar-logo {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #f472b6, #d946ef);
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 800;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    box-shadow: 0 4px 15px rgba(217, 70, 239, 0.3);
+}
+
+.brand-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 4px;
+}
+
+.bio {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.link-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.link-btn {
+    display: block;
+    padding: 10px 14px;
+    background: #fdf4ff;
+    color: #86198f;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 10px;
+    border: 1px solid #f5d0fe;
+    transition: all 0.2s ease;
+}
+
+.link-btn:hover {
+    background: #d946ef;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(217, 70, 239, 0.25);
+}
+
+.link-btn.highlight {
+    background: #fae8ff;
+    border-color: #e879f9;
+}
+
+/* 右側主要內容區 */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.content-box {
+    background: rgba(255, 255, 255, 0.92);
+    padding: 36px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(217, 70, 239, 0.08);
+}
+
+.content-box h2 {
+    margin-bottom: 16px;
+    color: #0f172a;
+    border-bottom: 2px solid #fae8ff;
+    padding-bottom: 8px;
+    font-size: 1.25rem;
+}
+
+/* 證件照與個資排版區塊 */
+.profile-header-flex {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+
+.id-photo-container {
+    width: 150px;
+    height: 180px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 3px solid #f5d0fe;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.id-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 確保照片不變形填滿框框 */
+}
+
+.main-name {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.sub-name {
+    font-size: 1.2rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.info-tags {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.tag {
+    background: #fae8ff;
+    color: #86198f;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.intro-text {
+    color: #475569;
+    font-size: 0.95rem;
+}
+
+/* 社群導向卡片 */
+.social-banner-card {
+    display: block;
+    background: #fdf4ff;
+    padding: 20px 24px;
+    border-radius: 12px;
+    border: 1px solid #f5d0fe;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.social-banner-card:hover {
+    background: #fae8ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(217, 70, 239, 0.15);
+}
+
+.card-text h3 {
+    color: #86198f;
+    margin-bottom: 4px;
+    font-size: 1.1rem;
+}
+
+.card-text p {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* 📱 手機版自動變形 */
+@media (max-width: 768px) {
+    .layout-container {
+        flex-direction: column;
+        margin: 20px auto;
+        gap: 20px;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: static;
+    }
+
+    .link-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .link-list a:last-child:nth-child(odd) {
+        grid-column: span 2;
+    }
+
+    .profile-header-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-tags {
+        justify-content: center;
+    }
+
+    .id-photo-container {
+        margin: 0 auto;
+    }
+}
