@@ -110,9 +110,11 @@ body {
     box-shadow: 0 4px 12px rgba(217, 70, 239, 0.25);
 }
 
-.link-btn.highlight {
-    background: #fae8ff;
-    border-color: #e879f9;
+/* 當前分頁高亮 */
+.link-btn.active {
+    background: #d946ef;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(217, 70, 239, 0.25);
 }
 
 /* 右側主要內容區 */
@@ -133,6 +135,68 @@ body {
     border-bottom: 2px solid #fae8ff;
     padding-bottom: 8px;
     font-size: 1.3rem;
+}
+
+/* 頁面標題卡片 */
+.page-header {
+    margin-bottom: 20px;
+    padding: 24px 32px;
+}
+
+.page-header p {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-top: 4px;
+}
+
+/* 主題小卡網格 */
+.topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+/* 單張卡片樣式 */
+.topic-card {
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    border: 1px solid #f1f5f9;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.topic-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(217, 70, 239, 0.1);
+}
+
+.topic-card h3 {
+    color: #0f172a;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.card-desc {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.topic-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.topic-card li {
+    color: #334155;
+    font-size: 0.95rem;
+    padding: 4px 0;
+    border-bottom: 1px solid #f8fafc;
 }
 
 /* 📱 手機版自動變形 */
@@ -157,57 +221,4 @@ body {
     .link-list a:last-child:nth-child(odd) {
         grid-column: span 2;
     }
-}
-
-/* 主題小卡網格 */
-.topic-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 20px;
-}
-
-/* 單張卡片樣式 */
-.topic-card {
-    background: #ffffff; /* 純白背景 */
-    padding: 32px;
-    border-radius: 16px; /* 漂亮的圓角 */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04); /* 極淡的高級陰影 */
-    border: 1px solid #f1f5f9; /* 極細的邊框 */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.topic-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(217, 70, 239, 0.1); /* 移上去時帶點淡淡的粉紫光暈 */
-}
-
-/* 卡片標題 */
-.topic-card h3 {
-    color: #0f172a;
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 12px;
-}
-
-/* 卡片內的說明文字 */
-.card-desc {
-    color: #64748b;
-    font-size: 0.95rem;
-    margin-bottom: 20px;
-    line-height: 1.5;
-}
-
-/* 遊戲清單（不需要前方的小圓點，單純整齊排列） */
-.topic-card ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.topic-card li {
-    color: #334155;
-    font-size: 0.95rem;
-    padding: 4px 0;
-    border-bottom: 1px solid #f8fafc; /* 每一行之間有一條極淡的分隔線 */
 }
