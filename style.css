@@ -222,3 +222,70 @@ body {
         grid-column: span 2;
     }
 }
+
+/* 圖片小卡網格排版（電腦版自動多欄排列） */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+/* 單張圖片小卡設計 */
+.image-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    border: 1px solid #f1f5f9;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(217, 70, 239, 0.15);
+}
+
+/* 圖片容器（自動適應圖片原始比例，不裁切） */
+.img-container {
+    width: 100%;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.img-container img {
+    width: 100%;
+    height: auto; /* 保持圖片原本的高寬比例，菜單或長圖才不會被卡掉 */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* 滑鼠移到卡片上時，圖片微微放大特效 */
+.image-card:hover .img-container img {
+    transform: scale(1.03);
+}
+
+/* 圖片下方文字區域 */
+.image-card-content {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.image-card-content h3 {
+    color: #0f172a;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.image-card-content p {
+    color: #64748b;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
